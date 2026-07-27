@@ -287,6 +287,8 @@ hl.config({
 
 		accel_profile = flat,
 		force_no_accel = true,
+		scroll_method = "on_button_down",
+		scroll_button = 2,
 
 		follow_mouse = 1,
 		off_window_axis_events = 2,
