@@ -1,8 +1,5 @@
 require("hyprland.lib")
 require("custom.variables")
-if is_file_exists(HOME .. "/.config/hypr/custom/variables.lua") then
-	require("custom.variables")
-end
 
 local qsScripts = "$HOME/.config/quickshell/$qsConfig/scripts"
 local hyprScripts = "$HOME/.config/hypr/hyprland/scripts"
@@ -451,12 +448,12 @@ hl.bind("SUPER + SHIFT + ALT + H", function()
 end)
 hl.bind(
 	"SUPER + SHIFT + ALT + K",
-	hl.dsp.window.move({ workspace = "r-10", follow = true }),
+	hl.dsp.window.move({ workspace = "-10", follow = true }),
 	{ description = "Window: Move to previous workspace group" }
 )
 hl.bind(
 	"SUPER + SHIFT + ALT + J",
-	hl.dsp.window.move({ workspace = "r+10", follow = true }),
+	hl.dsp.window.move({ workspace = "+10", follow = true }),
 	{ description = "Window: Move to next workspace group" }
 )
 hl.bind("SUPER + SHIFT + ALT + L", function()
@@ -546,11 +543,13 @@ for i = 1, 10 do
 		hl.dispatch(hl.dsp.focus({ workspace = workspace_in_group(i) }))
 	end)
 end
-
 for i = 1, 10 do -- silent send
-	hl.bind("SUPER + CTRL + " .. (i % 10), function()
-		hl.dispatch(hl.dsp.window.move({ workspace = workspace_in_group(i), follow = false }))
-	end, { description = "Window: Send to workspace " .. i })
+	hl.bind("SUPER + ALT + " .. (i % 10), function()
+		hl.dispatch(hl.dsp.window.move({
+			workspace = workspace_in_group(i),
+			follow = false,
+		}))
+	end)
 end
 for i = 1, 10 do
 	local numpadkey = { 87, 88, 89, 83, 84, 85, 79, 80, 81, 90 }
@@ -558,7 +557,6 @@ for i = 1, 10 do
 		hl.dispatch(hl.dsp.window.move({ workspace = workspace_in_group(i), follow = false }))
 	end)
 end
-
 for i = 1, 10 do -- send and follow
 	hl.bind("SUPER + SHIFT + " .. (i % 10), function()
 		hl.dispatch(hl.dsp.window.move({ workspace = workspace_in_group(i), follow = true }))
@@ -592,8 +590,8 @@ for i = 1, 4 do
 end
 hl.bind("CTRL + SUPER + BracketLeft", hl.dsp.focus({ workspace = "-1" }))
 hl.bind("CTRL + SUPER + BracketRight", hl.dsp.focus({ workspace = "+1" }))
-hl.bind("SUPER + ALT + K", hl.dsp.focus({ workspace = "r-10" }), { description = "Workspace: Previous group" })
-hl.bind("SUPER + ALT + J", hl.dsp.focus({ workspace = "r+10" }), { description = "Workspace: Next group" })
+hl.bind("SUPER + ALT + K", hl.dsp.focus({ workspace = "-10" }), { description = "Workspace: Previous group" })
+hl.bind("SUPER + ALT + J", hl.dsp.focus({ workspace = "+10" }), { description = "Workspace: Next group" })
 
 --#############################################################################
 --## WORKSPACE — SEND, RELATIVE (mouse/page alt paths)
