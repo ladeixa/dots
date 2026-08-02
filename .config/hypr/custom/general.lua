@@ -22,16 +22,25 @@ hl.monitor({
 })
 
 -- Workspace assignments
-hl.workspace_rule({ workspace = "1", monitor = "eDP-1", default = true })
-hl.workspace_rule({ workspace = "2", monitor = "eDP-1" })
-hl.workspace_rule({ workspace = "3", monitor = "eDP-1" })
-hl.workspace_rule({ workspace = "4", monitor = "DP-2", default = true })
-hl.workspace_rule({ workspace = "5", monitor = "DP-2" })
-hl.workspace_rule({ workspace = "6", monitor = "DP-2" })
-hl.workspace_rule({ workspace = "7", monitor = "DP-2" })
-hl.workspace_rule({ workspace = "8", monitor = "HDMI-A-1", default = true })
-hl.workspace_rule({ workspace = "9", monitor = "HDMI-A-1" })
-hl.workspace_rule({ workspace = "10", monitor = "HDMI-A-1" })
+-- Repeats every 10: 1-3 eDP-1, 4-7 DP-2, 8-10 HDMI-A-1
+for ws = 1, 100 do
+	local slot = ((ws - 1) % 10) + 1
+	local monitor
+
+	if slot <= 3 then
+		monitor = "eDP-1"
+	elseif slot <= 7 then
+		monitor = "DP-2"
+	else
+		monitor = "HDMI-A-1"
+	end
+
+	hl.workspace_rule({
+		workspace = tostring(ws),
+		monitor = monitor,
+		default = (ws == 1 or ws == 4 or ws == 8),
+	})
+end
 
 hl.gesture({
 	fingers = 3,

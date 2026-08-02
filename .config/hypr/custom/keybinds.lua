@@ -587,11 +587,10 @@ for i = 1, 4 do
 	local prefix = { "+", "-", "r+", "r-" }
 	hl.bind(keycombos[i], hl.dsp.focus({ workspace = prefix[i] .. "1" }))
 end
-for i = 1, 4 do
-	local key = { "BracketLeft", "BracketRight", "Up", "Down" }
-	local prefix = { "-1", "+1", "r-5", "r+5" }
-	hl.bind("CTRL + SUPER + " .. key[i], hl.dsp.focus({ workspace = prefix[i] }))
-end
+hl.bind("CTRL + SUPER + BracketLeft", hl.dsp.focus({ workspace = "-1" }))
+hl.bind("CTRL + SUPER + BracketRight", hl.dsp.focus({ workspace = "+1" }))
+hl.bind("SUPER + ALT + K", hl.dsp.focus({ workspace = "r-10" }), { description = "Workspace: Previous group" })
+hl.bind("SUPER + ALT + J", hl.dsp.focus({ workspace = "r+10" }), { description = "Workspace: Next group" })
 
 --#############################################################################
 --## WORKSPACE — SEND, RELATIVE (mouse/page alt paths)
