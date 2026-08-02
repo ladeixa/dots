@@ -449,16 +449,19 @@ end
 hl.bind("SUPER + SHIFT + ALT + H", function()
 	move_to_monitor("l")
 end)
-hl.bind("SUPER + SHIFT + ALT + J", function()
-	move_to_monitor("d")
-end)
-hl.bind("SUPER + SHIFT + ALT + K", function()
-	move_to_monitor("u")
-end)
+hl.bind(
+	"SUPER + SHIFT + ALT + K",
+	hl.dsp.window.move({ workspace = "r-10", follow = true }),
+	{ description = "Window: Move to previous workspace group" }
+)
+hl.bind(
+	"SUPER + SHIFT + ALT + J",
+	hl.dsp.window.move({ workspace = "r+10", follow = true }),
+	{ description = "Window: Move to next workspace group" }
+)
 hl.bind("SUPER + SHIFT + ALT + L", function()
 	move_to_monitor("r")
 end)
-
 hl.bind("SUPER + ALT + H", hl.dsp.focus({ monitor = "l" }), { description = "Window: Focus monitor left" })
 hl.bind("SUPER + ALT + L", hl.dsp.focus({ monitor = "r" }), { description = "Window: Focus monitor right" })
 
