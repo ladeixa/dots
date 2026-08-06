@@ -26,7 +26,6 @@ hl.bind(
 	hl.dsp.global("quickshell:workspaceNumber"),
 	{ ignore_mods = true, transparent = true, release = true }
 )
-
 hl.bind("SUPER + A", hl.dsp.global("quickshell:sidebarLeftToggle"), { description = "Shell: Toggle left sidebar" })
 hl.bind(
 	"SUPER + ALT + A",
@@ -37,6 +36,7 @@ hl.bind("SUPER + N", hl.dsp.global("quickshell:sidebarRightToggle"), { descripti
 hl.bind("SUPER + Slash", hl.dsp.global("quickshell:cheatsheetToggle"), { description = "Shell: Toggle cheatsheet" })
 hl.bind("SUPER + M", hl.dsp.global("quickshell:mediaControlsToggle"), { description = "Shell: Toggle media controls" })
 hl.bind("SUPER + G", hl.dsp.global("quickshell:overlayToggle"), { description = "Shell: Toggle widget overlay" })
+hl.bind("SUPER + Y", hl.dsp.global("quickshell:barToggle"), { description = "Shell: Toggle bar" })
 hl.bind("SUPER + Escape", hl.dsp.global("quickshell:sessionToggle"), { description = "Shell: Toggle session menu" })
 hl.bind(
 	"SHIFT + SUPER + ALT + Slash",

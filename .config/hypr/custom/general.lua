@@ -83,7 +83,7 @@ hl.config({
 	},
 	general = {
 		-- Gaps and border
-		gaps_in = 1,
+		gaps_in = 2,
 		gaps_out = 4,
 		gaps_workspaces = 50,
 
