@@ -2560,3 +2560,17 @@
 [2026-08-23 15:41:35.613]	Invoking /home/uv/.config/tmux/plugins/tpm/bin/clean_plugins all
 [2026-08-23 15:41:35.750]	Done.
 
+[2026-08-26 16:27:49.087]	List of discovered tpm plugins: tmux-plugins/tmux-resurrect tmux-plugins/tmux-continuum
+[2026-08-26 16:27:49.105]	Invoking /home/uv/.config/tmux/plugins/tpm/bin/install_plugins
+[2026-08-26 16:27:49.150]	Already installed "tmux-continuum"
+[2026-08-26 16:27:49.160]	Already installed "tmux-resurrect"
+[2026-08-26 16:27:49.181]	Invoking /home/uv/.config/tmux/plugins/tpm/bin/update_plugins all
+[2026-08-26 16:27:49.204]	Updating all plugins!
+[2026-08-26 16:27:49.214]	
+[2026-08-26 16:27:50.162]	  "tmux-continuum" update success
+[2026-08-26 16:27:50.173]	    | Already up to date.
+[2026-08-26 16:27:50.181]	  "tmux-resurrect" update success
+[2026-08-26 16:27:50.200]	    | Already up to date.
+[2026-08-26 16:27:50.227]	Invoking /home/uv/.config/tmux/plugins/tpm/bin/clean_plugins all
+[2026-08-26 16:27:50.354]	Done.
+

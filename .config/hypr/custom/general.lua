@@ -15,7 +15,7 @@ hl.monitor({
 
 hl.monitor({
 	output = "HDMI-A-1",
-	mode = "1080x1920@75",
+	mode = "1920x1080@75",
 	position = "4480x0",
 	scale = 1,
 	transform = 1, -- Portrait (90° clockwise)
