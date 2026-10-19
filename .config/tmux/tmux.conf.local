@@ -479,7 +479,10 @@ tmux_conf_uninstall_plugins_on_reload=true
 set -g @plugin 'tmux-plugins/tmux-resurrect'
 set -g @plugin 'tmux-plugins/tmux-continuum'
 set -g @continuum-restore 'on'
-set -g @continuum-save-interval '1'
+set -g @continuum-save-interval '5'
+
+# Save when the tmux client detaches or its terminal closes
+set-hook -g client-detached 'run-shell -b "#{@resurrect-save-script-path} quiet"'
 
 
 # -- custom variables ----------------------------------------------------------
